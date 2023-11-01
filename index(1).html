@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parking Status</title>
+</head>
+<body>
+    <h1>Parking Slot Status</h1>
+    <div id="parking-data">Loading...</div>
+    
+    <script>
+        fetch('http://192.168.1.8/parking-status')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('parking-data').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
